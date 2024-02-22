@@ -11,8 +11,35 @@
 </head>
 
 <body>
-    
-    
+    <div class="crud">
+        <div class="head">
+            <h2>CRUD</h2>
+            <p> Product Management System </p>
+        </div>
+        <div class="input">
+            <input type="text" id="title" placeholder="Title">
+            <div class="price">
+                <input type="number" id="price" placeholder="Price">
+                <input type="number" id="ads" placeholder="Ads">
+                <input type="number" id="discount" placeholder="discount">
+                <input type="number" id="tax" placeholder="Tax">
+                <small id="total">123465</small>
+            </div>
+            <input type="text" id="category" placeholder="Category">
+            <input type="text" id="count" placeholder="Count">
+            <button class="submit"> Create</button>
+        </div>
+        <div class="output">
+            <div class="searchBlock">
+                <input type="text" placeholder="Search by Name">
+                <div class="btnSearch">
+                    <button id="searchByName">Search By Title</button>
+                    <button id="searchByName">Search By Category</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="JS/popper.min.js"></script>
     <script src="JS/all.min.js"></script>
     <script src="JS/bootstrap.min.js"></script>
