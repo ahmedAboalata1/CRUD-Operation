@@ -75,3 +75,13 @@ button:hover {
 .btnSearch button{
     width:40%;
 }
+table{
+    text-align: center;
+    width: 100% ;
+}
+table th{
+    text-transform: uppercase;
+}
+th ,td{
+    padding: 5px;
+}

@@ -23,11 +23,11 @@
                 <input type="number" id="ads" placeholder="Ads">
                 <input type="number" id="discount" placeholder="discount">
                 <input type="number" id="tax" placeholder="Tax">
-                <small id="total">123465</small>
+                <small id="total">  </small>
             </div>
             <input type="text" id="category" placeholder="Category">
             <input type="text" id="count" placeholder="Count">
-            <button class="submit"> Create</button>
+            <button id="submit" onclick="fun()"> Create</button>
         </div>
         <div class="output">
             <div class="searchBlock">
@@ -36,6 +36,36 @@
                     <button id="searchByName">Search By Title</button>
                     <button id="searchByName">Search By Category</button>
                 </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>Price</th>
+                            <th>discount</th>
+                            <th>ads</th>
+                            <th>tax</th>
+                            <th>Total</th>
+                            <th>Category</th>
+                            <th>Delete</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <th>Lenovo</th>
+                            <th>15554</th>
+                            <th>350</th>
+                            <th>150</th>
+                            <th>100</th>
+                            <th>13</th>
+                            <th>LapTop</th>
+                            <th><button id="delete">Delete</button></th>
+                            <th><button id="Update">Update</button></th>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
