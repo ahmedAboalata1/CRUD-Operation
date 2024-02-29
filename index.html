@@ -19,15 +19,15 @@
         <div class="input">
             <input type="text" id="title" placeholder="Title">
             <div class="price">
-                <input type="number" id="price" placeholder="Price">
-                <input type="number" id="ads" placeholder="Ads">
-                <input type="number" id="discount" placeholder="discount">
-                <input type="number" id="tax" placeholder="Tax">
-                <small id="total">123465</small>
+                <input oninput="getTotal()" type="number" id="price" placeholder="Price">
+                <input oninput="getTotal()" type="number" id="ads" placeholder="Ads">
+                <input oninput="getTotal()" type="number" id="tax" placeholder="Tax">
+                <input oninput="getTotal()" type="number" id="discount" placeholder="discount">
+                <small id="total"></small>
             </div>
             <input type="text" id="category" placeholder="Category">
             <input type="text" id="count" placeholder="Count">
-            <button class="submit"> Create</button>
+            <button class="submit" id="submit"> Create</button>
         </div>
         <div class="output">
             <div class="searchBlock">
@@ -36,6 +36,34 @@
                     <button id="searchByName">Search By Title</button>
                     <button id="searchByName">Search By Category</button>
                 </div>
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Tax</th>
+                        <th>Discount</th>
+                        <th>Ads</th>
+                        <th>Total</th>
+                        <th>Category</th>
+                        <th>Update</th>
+                        <th>delete</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Lenovo</td>
+                            <td>15000</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>15</td>
+                            <td>Mobile</td>
+                            <td><button id="update">Update</button></td>
+                            <td><button id="delete">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

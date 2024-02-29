@@ -73,5 +73,16 @@ button:hover {
     justify-content: space-evenly;
 }
 .btnSearch button{
-    width:40%;
+    width:45%;
+}
+table{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+table th{
+    text-transform: uppercase;
+}
+th, td{
+    padding: 5px;
 }
