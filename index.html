@@ -19,6 +19,7 @@
         <div class="input">
             <input type="text" id="title" placeholder="Title">
             <div class="price">
+<<<<<<< HEAD
                 <input oninput="getTotal()" type="number" id="price" placeholder="Price">
                 <input oninput="getTotal()" type="number" id="ads" placeholder="Ads">
                 <input oninput="getTotal()" type="number" id="tax" placeholder="Tax">
@@ -28,6 +29,17 @@
             <input type="text" id="category" placeholder="Category">
             <input type="text" id="count" placeholder="Count">
             <button class="submit" id="submit"> Create</button>
+=======
+                <input type="number" id="price" placeholder="Price">
+                <input type="number" id="ads" placeholder="Ads">
+                <input type="number" id="discount" placeholder="discount">
+                <input type="number" id="tax" placeholder="Tax">
+                <small id="total">  </small>
+            </div>
+            <input type="text" id="category" placeholder="Category">
+            <input type="text" id="count" placeholder="Count">
+            <button id="submit" onclick="fun()"> Create</button>
+>>>>>>> 26d738257e696fca12325dcc0ea725edff7fa5e4
         </div>
         <div class="output">
             <div class="searchBlock">
@@ -37,6 +49,7 @@
                     <button id="searchByName">Search By Category</button>
                 </div>
                 <table>
+<<<<<<< HEAD
                     <tr>
                         <th>Id</th>
                         <th>Title</th>
@@ -61,6 +74,34 @@
                             <td>Mobile</td>
                             <td><button id="update">Update</button></td>
                             <td><button id="delete">Delete</button></td>
+=======
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>Price</th>
+                            <th>discount</th>
+                            <th>ads</th>
+                            <th>tax</th>
+                            <th>Total</th>
+                            <th>Category</th>
+                            <th>Delete</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <th>Lenovo</th>
+                            <th>15554</th>
+                            <th>350</th>
+                            <th>150</th>
+                            <th>100</th>
+                            <th>13</th>
+                            <th>LapTop</th>
+                            <th><button id="delete">Delete</button></th>
+                            <th><button id="Update">Update</button></th>
+>>>>>>> 26d738257e696fca12325dcc0ea725edff7fa5e4
                         </tr>
                     </tbody>
                 </table>
