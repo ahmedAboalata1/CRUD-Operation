@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/bootstrap.css">
-    <link rel="stylesheet" href="CSS/all.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/bootstrap.css" />
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <title>CRUD Operation</title>
 </head>
 
@@ -14,95 +14,50 @@
     <div class="crud">
         <div class="head">
             <h2>CRUD</h2>
-            <p> Product Management System </p>
+            <p>Product Management System</p>
         </div>
         <div class="input">
-            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="title" placeholder="Title" />
             <div class="price">
-<<<<<<< HEAD
-                <input oninput="getTotal()" type="number" id="price" placeholder="Price">
-                <input oninput="getTotal()" type="number" id="ads" placeholder="Ads">
-                <input oninput="getTotal()" type="number" id="tax" placeholder="Tax">
-                <input oninput="getTotal()" type="number" id="discount" placeholder="discount">
+                <input oninput="getTotal()" type="number" id="price" placeholder="Price" />
+                <input oninput="getTotal()" type="number" id="ads" placeholder="Ads" />
+                <input oninput="getTotal()" type="number" id="tax" placeholder="Tax" />
+                <input oninput="getTotal()" type="number" id="discount" placeholder="discount" />
                 <small id="total"></small>
             </div>
-            <input type="text" id="category" placeholder="Category">
-            <input type="text" id="count" placeholder="Count">
-            <button class="submit" id="submit"> Create</button>
-=======
-                <input type="number" id="price" placeholder="Price">
-                <input type="number" id="ads" placeholder="Ads">
-                <input type="number" id="discount" placeholder="discount">
-                <input type="number" id="tax" placeholder="Tax">
-                <small id="total">  </small>
-            </div>
-            <input type="text" id="category" placeholder="Category">
-            <input type="text" id="count" placeholder="Count">
-            <button id="submit" onclick="fun()"> Create</button>
->>>>>>> 26d738257e696fca12325dcc0ea725edff7fa5e4
+            <input type="text" id="category" placeholder="Category" />
+            <input type="number" id="count" placeholder="Count" />
+            <button class="submit" id="submit" onclick="createProduct()">
+                Create
+            </button>
         </div>
         <div class="output">
             <div class="searchBlock">
-                <input type="text" placeholder="Search by Name">
+                <input type="text" placeholder="Search by Name" />
                 <div class="btnSearch">
                     <button id="searchByName">Search By Title</button>
                     <button id="searchByName">Search By Category</button>
                 </div>
+                <div class="btnDeleteAll">
+                    <button id="deleteAllBtn" onclick="deleteAll()">Delete All</button>
+                </div>
                 <table>
-<<<<<<< HEAD
-                    <tr>
-                        <th>Id</th>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Tax</th>
-                        <th>Discount</th>
-                        <th>Ads</th>
-                        <th>Total</th>
-                        <th>Category</th>
-                        <th>Update</th>
-                        <th>delete</th>
-                    </tr>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Lenovo</td>
-                            <td>15000</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>15</td>
-                            <td>Mobile</td>
-                            <td><button id="update">Update</button></td>
-                            <td><button id="delete">Delete</button></td>
-=======
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>title</th>
+                            <th>Id</th>
+                            <th>Title</th>
                             <th>Price</th>
-                            <th>discount</th>
-                            <th>ads</th>
-                            <th>tax</th>
+                            <th>Tax</th>
+                            <th>Discount</th>
+                            <th>Ads</th>
                             <th>Total</th>
                             <th>Category</th>
-                            <th>Delete</th>
                             <th>Update</th>
+                            <th>delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th>1</th>
-                            <th>Lenovo</th>
-                            <th>15554</th>
-                            <th>350</th>
-                            <th>150</th>
-                            <th>100</th>
-                            <th>13</th>
-                            <th>LapTop</th>
-                            <th><button id="delete">Delete</button></th>
-                            <th><button id="Update">Update</button></th>
->>>>>>> 26d738257e696fca12325dcc0ea725edff7fa5e4
-                        </tr>
+                    <tbody id="productTableBody">
+
                     </tbody>
                 </table>
             </div>

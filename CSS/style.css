@@ -27,6 +27,7 @@ input {
     margin: 10px 0;
     outline: none;
     border: none;
+    border-radius: 7px;
     border-radius: none;
     background-color: #222;
     color: #FFF;
@@ -63,26 +64,37 @@ button {
     transition: .5s;
 
 }
+
 button:hover {
     background-color: #8f69b3;
     letter-spacing: 1px;
 }
 
-.btnSearch{
-    display:flex ;
+.btnSearch {
+    display: flex;
     justify-content: space-evenly;
 }
-.btnSearch button{
-    width:45%;
+
+.btnSearch button {
+    width: 45%;
 }
-table{
+
+table {
     width: 100%;
     text-align: center;
     margin: 10px 0;
 }
-table th{
+
+table th {
     text-transform: uppercase;
 }
-th, td{
+
+th,td {
     padding: 5px;
+}
+
+.btnDeleteAll {
+    padding: 10px;
+    width: 50%;
+    margin: auto;
 }
