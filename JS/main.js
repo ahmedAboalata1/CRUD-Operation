@@ -15,6 +15,8 @@ let products = [];
 
 let temporaryIndex;
 
+let searchInput = document.getElementById('searchInput');
+let searchMood = ''
 if (localStorage.getItem('products') != null) {
     products = JSON.parse(localStorage.getItem('products'))
 }
@@ -32,7 +34,6 @@ function getTotal() {
         total.innerHTML = ""
     }
 }
-
 function createProduct() {
     let product = {
         title: title.value,
@@ -49,8 +50,8 @@ function createProduct() {
         }
     } else {
         products[temporaryIndex] = product
-        submit.innerHTML='Create'
-        count.style.display='block'
+        submit.innerHTML = 'Create'
+        count.style.display = 'block'
     }
 
     localStorage.setItem('products', JSON.stringify(products))
@@ -69,7 +70,6 @@ function displayProducts() {
                 <td>${products[i].discount}</td>
                 <td>${products[i].total}</td>
                 <td>${products[i].category}</td>
-                <td${products[i].count}</td>
                 <td><button id="update"onclick="updateProduct(${i})">Update</button></td>
                 <td><button id="delete"onclick="deleteProduct(${i})">Delete</button></td>
                </tr>`
@@ -108,4 +108,55 @@ function deleteAll() {
     products = []
     localStorage.setItem('products', JSON.stringify(products))
     displayProducts()
+}
+function getSearchMood(searchBtnId) {
+    searchInput.focus()
+    if (searchBtnId == 'searchByTitle') {
+        searchInput.placeholder = 'Search By Title'
+        searchMood = 'title'
+    } else {
+        searchInput.placeholder = 'Search By Category'
+        searchMood = 'category'
+    }
+}
+function search(param) {
+    allRows = ''
+    for (let index = 0; index < products.length; index++) {
+        if (searchMood == 'title') {
+            if (products[index].title.toLowerCase().includes(param.value.toLowerCase())) {
+                let row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${products[index].title}</td>
+                    <td>${products[index].price}</td>
+                    <td>${products[index].ads}</td>
+                    <td>${products[index].tax}</td>
+                    <td>${products[index].discount}</td>
+                    <td>${products[index].total}</td>
+                    <td>${products[index].category}</td>
+                    <td><button id="update"onclick="updateProduct(${index})">Update</button></td>
+                    <td><button id="delete"onclick="deleteProduct(${index})">Delete</button></td>
+                </tr>`
+                allRows = allRows + row
+            }
+            productTableBody.innerHTML = allRows
+        }
+        else {
+            if (products[index].category.toLowerCase().includes(param.value.toLowerCase())) {
+                let row = `<tr>
+                <td>${index + 1}</td>
+                <td>${products[index].title}</td>
+                <td>${products[index].price}</td>
+                <td>${products[index].ads}</td>
+                <td>${products[index].tax}</td>
+                <td>${products[index].discount}</td>
+                <td>${products[index].total}</td>
+                <td>${products[index].category}</td>
+                <td><button id="update"onclick="updateProduct(${index})">Update</button></td>
+                <td><button id="delete"onclick="deleteProduct(${index})">Delete</button></td>
+               </tr>`
+                allRows = allRows + row
+            }
+        }
+        productTableBody.innerHTML = allRows
+    }
 }

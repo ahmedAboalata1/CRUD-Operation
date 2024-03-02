@@ -22,7 +22,7 @@
                 <input oninput="getTotal()" type="number" id="price" placeholder="Price" />
                 <input oninput="getTotal()" type="number" id="ads" placeholder="Ads" />
                 <input oninput="getTotal()" type="number" id="tax" placeholder="Tax" />
-                <input oninput="getTotal()" type="number" id="discount" placeholder="discount" />
+                <input oninput="getTotal()" type="number" id="discount" placeholder="discount"  />
                 <small id="total"></small>
             </div>
             <input type="text" id="category" placeholder="Category" />
@@ -33,10 +33,10 @@
         </div>
         <div class="output">
             <div class="searchBlock">
-                <input type="text" placeholder="Search by Name" />
+                <input type="text" placeholder="Search" id="searchInput" oninput="search(this)" />
                 <div class="btnSearch">
-                    <button id="searchByName">Search By Title</button>
-                    <button id="searchByName">Search By Category</button>
+                    <button id="searchByTitle"onclick="getSearchMood(this.id)">Search By Title</button>
+                    <button id="searchByName" onclick="getSearchMood(this.id)">Search By Category</button>
                 </div>
                 <div class="btnDeleteAll">
                     <button id="deleteAllBtn" onclick="deleteAll()">Delete All</button>
@@ -56,9 +56,7 @@
                             <th>delete</th>
                         </tr>
                     </thead>
-                    <tbody id="productTableBody">
-
-                    </tbody>
+                    <tbody id="productTableBody"></tbody>
                 </table>
             </div>
         </div>
