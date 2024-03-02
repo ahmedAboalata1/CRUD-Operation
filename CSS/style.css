@@ -98,3 +98,7 @@ th,td {
     width: 50%;
     margin: auto;
 }
+.validationMassages{
+    color: #dd4444;
+    display: none;
+}

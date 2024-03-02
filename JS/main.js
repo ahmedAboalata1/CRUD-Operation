@@ -14,9 +14,12 @@ var deleteAllBtn = document.getElementById('deleteAllBtn')
 let products = [];
 
 let temporaryIndex;
-
 let searchInput = document.getElementById('searchInput');
 let searchMood = ''
+
+let validForm=false;
+let validationMassages=document.querySelectorAll('.validationMassages')
+console.log(validationMassages)
 if (localStorage.getItem('products') != null) {
     products = JSON.parse(localStorage.getItem('products'))
 }
@@ -35,28 +38,32 @@ function getTotal() {
     }
 }
 function createProduct() {
-    let product = {
-        title: title.value,
-        price: price.value,
-        ads: ads.value,
-        tax: tax.value,
-        discount: discount.value,
-        total: total.innerHTML,
-        category: category.value
-    }
-    if (count.value >= 1) {
-        for (let index = 0; index < count.value; index++) {
-            products.push(product)
+    if(validForm==true){
+        let product = {
+            title: title.value,
+            price: price.value,
+            ads: ads.value,
+            tax: tax.value,
+            discount: discount.value,
+            total: total.innerHTML,
+            category: category.value
         }
-    } else {
-        products[temporaryIndex] = product
-        submit.innerHTML = 'Create'
-        count.style.display = 'block'
+        if (count.value >= 1) {
+            for (let index = 0; index < count.value; index++) {
+                products.push(product)
+            }
+        } else {
+            products[temporaryIndex] = product
+            submit.innerHTML = 'Create'
+            count.style.display = 'block'
+        }
+    
+        localStorage.setItem('products', JSON.stringify(products))
+        displayProducts()
+        clearProductInputs()
+    }else{
+        validationMassages.forEach(x => x.style.display='block')
     }
-
-    localStorage.setItem('products', JSON.stringify(products))
-    displayProducts()
-    clearProductInputs()
 }
 function displayProducts() {
     let allRows = ''
@@ -159,4 +166,10 @@ function search(param) {
         }
         productTableBody.innerHTML = allRows
     }
+}
+function checkValidData() {
+    if(title.value.length>=8 && price.value>=1 &&category.value.length>=8 ){
+        validForm=true
+    }
+
 }
