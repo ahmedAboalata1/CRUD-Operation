@@ -13,7 +13,7 @@ var deleteAllBtn = document.getElementById('deleteAllBtn')
 
 let products = [];
 
-
+let temporaryIndex;
 
 if (localStorage.getItem('products') != null) {
     products = JSON.parse(localStorage.getItem('products'))
@@ -41,19 +41,19 @@ function createProduct() {
         tax: tax.value,
         discount: discount.value,
         total: total.innerHTML,
-        category: category.value,
-        count: count.value,
+        category: category.value
     }
-    if(product.count>=1){
-        for (let index = 0; index < product.count; index++) {
+    if (count.value >= 1) {
+        for (let index = 0; index < count.value; index++) {
             products.push(product)
         }
+    } else {
+        products[temporaryIndex] = product
+        submit.innerHTML='Create'
+        count.style.display='block'
     }
-    else{
 
-    }
     localStorage.setItem('products', JSON.stringify(products))
-    console.log(products)
     displayProducts()
     clearProductInputs()
 }
@@ -61,7 +61,7 @@ function displayProducts() {
     let allRows = ''
     for (let i = 0; i < products.length; i++) {
         let row = `<tr>
-                <td>${i}</td>
+                <td>${i + 1}</td>
                 <td>${products[i].title}</td>
                 <td>${products[i].price}</td>
                 <td>${products[i].ads}</td>
@@ -76,15 +76,23 @@ function displayProducts() {
         allRows = allRows + row
     }
     productTableBody.innerHTML = allRows
-    deleteAllBtn.style.display='block'
+    deleteAllBtn.style.display = 'block'
+    deleteAllBtn.innerHTML = `Delete ( ${products.length} )`
     if (products.length == 0) {
-        deleteAllBtn.style.display='none'
+        deleteAllBtn.style.display = 'none'
     }
 }
 function updateProduct(index) {
-alert("NOT IMPLEMENTED YET")
-    localStorage.setItem('products', JSON.stringify(products))
-    displayProducts()
+    title.value = products[index].title;
+    price.value = products[index].price;
+    ads.value = products[index].ads;
+    discount.value = products[index].discount
+    tax.value = products[index].tax
+    getTotal()
+    count.style.display = 'none'
+    category.value = products[index].category
+    submit.innerHTML = 'Update'
+    temporaryIndex = index
 }
 function deleteProduct(index) {
     products.splice(index, 1)
@@ -97,7 +105,7 @@ function clearProductInputs() {
     getTotal()
 }
 function deleteAll() {
-    products=[]
+    products = []
     localStorage.setItem('products', JSON.stringify(products))
     displayProducts()
 }
