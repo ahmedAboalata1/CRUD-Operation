@@ -19,7 +19,7 @@ let searchMood = ''
 
 let validForm=false;
 let validationMassages=document.querySelectorAll('.validationMassages')
-console.log(validationMassages)
+
 if (localStorage.getItem('products') != null) {
     products = JSON.parse(localStorage.getItem('products'))
 }
@@ -38,6 +38,7 @@ function getTotal() {
     }
 }
 function createProduct() {
+    checkValidData()
     if(validForm==true){
         let product = {
             title: title.value,
@@ -57,12 +58,9 @@ function createProduct() {
             submit.innerHTML = 'Create'
             count.style.display = 'block'
         }
-    
         localStorage.setItem('products', JSON.stringify(products))
         displayProducts()
         clearProductInputs()
-    }else{
-        validationMassages.forEach(x => x.style.display='block')
     }
 }
 function displayProducts() {
@@ -168,8 +166,10 @@ function search(param) {
     }
 }
 function checkValidData() {
-    if(title.value.length>=8 && price.value>=1 &&category.value.length>=8 ){
+    if(title.value.length>=8 && price.value>=1 &&category.value.length>=8){
         validForm=true
+        validationMassages.forEach(x => x.style.display='none')
+    }else{
+        validationMassages.forEach(x => x.style.display='block')
     }
-
 }

@@ -99,6 +99,6 @@ th,td {
     margin: auto;
 }
 .validationMassages{
-    color: #dd4444;
+    color: #f00;
     display: none;
 }
