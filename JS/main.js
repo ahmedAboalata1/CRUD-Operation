@@ -88,6 +88,7 @@ function displayProducts() {
     }
 }
 function updateProduct(index) {
+    title.focus();
     title.value = products[index].title;
     price.value = products[index].price;
     ads.value = products[index].ads;
@@ -98,6 +99,7 @@ function updateProduct(index) {
     category.value = products[index].category
     submit.innerHTML = 'Update'
     temporaryIndex = index
+
 }
 function deleteProduct(index) {
     products.splice(index, 1)
